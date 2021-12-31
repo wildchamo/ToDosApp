@@ -1,6 +1,10 @@
 //import './App.css';
 import React from 'react';
-import TodoCounter from './TodoCounter';
+import {TodoCounter} from './TodoCounter';
+import {TodoSearch} from './TodoSearch';
+import {CreateTodoButton} from './CreateTodoButton';
+import {TodoList} from './TodoList';
+import {TodoItem} from './TodoItem';
 
 const todos=[
   {text: 'Jugar cartas',completed:false},
@@ -13,15 +17,17 @@ function App() {
     <React.Fragment>
     
     <TodoCounter/>
-    {/* <TodoSearch/> */}
-    <input placeholder="Hola nombreUsuario"></input>
-    {/* <TodoList>
+
+    <TodoSearch/>
+   
+    <TodoList>
       {todos.map(todo => (
-        <TodoItem/>
-      ))} */}
-    {/* <TodoList/> */}
-    {/* <CreateTodoButton/> */}
-    <button>+</button>
+        <TodoItem key={todo.text} text={todo.text}/>
+      ))} 
+    </TodoList>
+
+    <CreateTodoButton/>
+   
 
     </React.Fragment>
       );
