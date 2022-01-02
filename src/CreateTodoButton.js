@@ -4,14 +4,14 @@ import './CreateTodoButton.css';
 //si directamente escribís el codigo sin envolverlo en una función se ejecuta automaticamente!
 function CreateTodoButton(){
 
-    const onClickButton = () =>{
-        alert('Aquí se debería abrir el modal!');
+    const onClickButton = (msg) =>{
+        alert(msg);
     }
 
     return(
         <button
         className="CreateTodoButton"
-        onClick={onClickButton}
+        onClick={() => onClickButton('HolaJose')}
         >+</button>
         );
 }
