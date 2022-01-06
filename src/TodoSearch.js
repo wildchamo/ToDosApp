@@ -3,12 +3,18 @@ import './TodoSearch.css';
 
 
 function TodoSearch(){
-    const onSearchValueChange= (event)=>{
-        console.log(event.target.value);
-    };
 
-    return(
-        <input onChange={onSearchValueChange} className="TodoSearch" placeholder="Hola nombreUsuario"></input>
-        );
+    const [search, setSearch]= React.useState(''); 
+
+     const onSearchValueChange= (event)=>{
+         console.log(event.target.value);
+         setSearch(event.target.value);
+     };
+
+    return[
+        <input onChange={onSearchValueChange} value={search} className="TodoSearch" placeholder="Hola nombreUsuario"/>
+    ,
+        <p>{search}</p> 
+];
 }
 export  {TodoSearch};
